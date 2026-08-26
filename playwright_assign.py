@@ -132,7 +132,7 @@ def process_contact(page: Page, contact: dict[str, str], screenshot_dir: Path) -
 		page.wait_for_selector('[data-testid="msg-container"]', state="visible", timeout=ACTION_TIMEOUT)
 		safe_name = re.sub(r"[^A-Za-z0-9_-]+", "_", contact["name"] or "contact")
 		safe_phone = re.sub(r"[^0-9]+", "", contact["phone"])
-		screenshot_path = (screenshot_dir / f"{safe_name}_{safe_phone or 'number'}.png").resolve()
+		screenshot_path = (screenshot_dir / f"{safe_name}.png").resolve()
 		screenshot_path.parent.mkdir(parents=True, exist_ok=True)
 		page.screenshot(path=str(screenshot_path), full_page=False)
 		if not screenshot_path.is_file():
