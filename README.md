@@ -23,7 +23,7 @@ Create `contact.xlsx` in this folder. The first row must contain these headers:
 
 | Name | Phone | Message |
 | --- | --- | --- |
-| XXXXX | +919876XXXXX | Hello {name} |
+| XXXX | +9198765XXXXX | Hello {name} |
 
 `Message` can be empty. The default message is `Hello {name}`. The `{name}` placeholder is replaced with the value from the `Name` column.
 
@@ -41,9 +41,8 @@ Or provide explicit paths:
 
 ```powershell
 python playwright-whatsapp-bot\playwright_assign.py `
-  --contacts "\path\to\contact.xlsx" `
-  --output "\path\to\whatsapp_reports" 
- 
+  --contacts "C:\path\to\contact.xlsx" `
+  --output "C:\path\to\whatsapp_reports"
 ```
 
 On the first run, WhatsApp Web opens in a visible Chromium window. Scan the QR code manually, then press Enter in the terminal. The persistent browser profile keeps the login for later runs.
